@@ -61,6 +61,8 @@ const renderActiveNote = () => {
   } else {
     noteTitle.value = '';
     noteText.value = '';
+    noteTitle.removeAttribute('readonly'); //added missing syntax
+    noteText.removeAttribute('readonly'); //added missing syntax
   }
 };
 
@@ -168,7 +170,10 @@ const renderNoteList = async (notes) => {
 };
 
 // Gets notes from the db and renders them to the sidebar
-const getAndRenderNotes = () => getNotes().then(renderNoteList);
+
+const getAndRenderNotes = () => getNotes().then((results) => {
+  console.log(results, 'these are my API results');
+  renderNoteList});
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
