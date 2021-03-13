@@ -1,24 +1,25 @@
 //'use strict';
 const { response } = require('express');
-//const { response } = require('express');
-
-const express = require('express');
-    // tells node we are creating an "express" server
-
+const express = require('express'); // tells node we are creating an "express" server
 const app = express();
-
 const PORT = process.env.PORT || 3000
-
 app.use(express.static('public'));
+
+//routes for notes and returns both files
 app.get('/notes.html', handleNotes);
 app.get('*', handleIndex);
 
-//api
+//added this path
+app.get('/', function(request, response){
+  response.json(path.join(__dirname, 'public/index.html'));
+});
+
+//routes for api reads db.json and handles 'get'requests
 app.get('/api/notes', (request, response) => {
     response.json('./db/db.json')
 })
 
-//routes
+//handles 'post' request
 app.post('/api/notes', (request, response) => {
     console.log(request.body);
     response.json('./db/db.json') 
@@ -29,10 +30,6 @@ function handleNotes(request, response){
 function handleIndex(request, response){
     response.status(200).sendFile('./public/index.html', { root: __dirname});
 }
-
-//GET /notes should return the notes.html file.
-//GET * should return the index.html file.
-
  
 // app.listen(3000, () =>
     // console.log("listening on PORT 3000"));
