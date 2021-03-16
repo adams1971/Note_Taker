@@ -1,5 +1,5 @@
 Express.js: Note Taker
-
+## Site Currently Under Construction
 ## Description
 This application will allow a user to create, edit and delete notes written in a database and stored on the server side. The app is then to be deployed on Heroku for user access.
 
@@ -39,8 +39,8 @@ The following HTML routes should be created:
 * `POST /api/notes` to receive a new note and save on the request body, add it to the `db.json` file, and then return the new note to the client. 
 To accomplish this I used the `npm` to create a unique ID at [npmjs](https://www.npmjs.com/package/uniqid) using `uniqid`
 
-* Deploy app to `Heroku`
+* See it Deployed at: `Heroku` [https://polar-wave-99684.herokuapp.com/](https://polar-wave-99684.herokuapp.com/)
 
 ## Conclusion
-At this poit the app is not completley functionsing. I have a bit more reserch to do in ourder to Push the notes and save to db.json. 
+At this point the app is not completley functionsing. I have a bit more reserch to do in ourder to Push the notes and save to db.json. 
 
