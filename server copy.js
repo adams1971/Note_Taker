@@ -3,47 +3,47 @@
 const express = require('express'); // tells node we are creating an "express" server
 const path = require('path');
 const fs = require('fs');
-const id = require('uniqid');
 const db = require('./db/db.json')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// var bodyParser = require('body-parser');//added bodyParser to recognize incoming requests
 
 //middleware
 app.use(express.static(path.join(__dirname, 'public')));  //lets discuss use
 app.use(express.urlencoded({ extended: true }));  //lets discuss use
 app.use(express.json()); //lets discuss use
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 //routes for notes and returns both files
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, "./public/index.html"));
+app.get('/notes.html', handleNotes);
+app.get('*', handleIndex);
+
+//added this path
+app.get('/notes.html', function(request, response){
+  response.json(path.join(__dirname, 'public/index.html'));
 });
 
-app.get("/notes", function(req, res){
-    res.sendFile(path.join(__dirname, "./public/notes.html"));
-});
+//routes for api reads db.json and handles 'get'requests
+app.get('/api/notes', (request, response) => {
+    response.json('./db/db.json')
+})
 
-//get api notes
-app.get("/api/notes", function(req, res) {
-    res.sendFile(path.join(__dirname, "/db/db.json"));
-});
-
-//post api notes
-app.post("/api/notes", function(req, res) {
-    var newNote = req.body; //removed var
-    var newID = id(); //removed var
-    newNote.id = newID;
-    console.log("new note ", newNote);
-});
-
-//get note from body
-
-// push to db.json
-
-// app.get(newNote, "/db/db.json" (req, res) {
-
-// })
+//handles 'post' request
+app.post('/api/notes', (request, response) => {
+    console.log(request.body);
+    response.json('./db/db.json') 
+})
+function handleNotes(request, response){
+    response.status(200).sendFile('./public/notes.html', { root: __dirname});
+}
+function handleIndex(request, response){
+    response.status(200).sendFile('./public/index.html', { root: __dirname});
+}
+ 
+// app.listen(3000, () =>
+    // console.log("listening on PORT 3000"));
 
 //starts the server and listend on port 3000 locally or when deployed at the whismy of Heroku 
 app.listen(PORT, () => {
