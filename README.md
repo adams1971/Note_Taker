@@ -12,14 +12,14 @@ The application’s front end has already been created however contained some bu
 
 The following images show the web application's appearance and functionality: 
 
-![public/assets/Screen-ShotEjs-localhost3000.png](public/assets/Screen-ShotEjs-localhost3000.png)
 ### Img Listening on Port 3000
+![public/assets/Screen-ShotEjs-localhost3000.png](public/assets/Screen-ShotEjs-localhost3000.png)
 
-![public/assets/ScreenShotEjs-displayed-notes.png](public/assets/ScreenShotEjs-displayed-notes.png)
 ### Img Notes.html page with saved notes
+![public/assets/ScreenShotEjs-displayed-notes.png](public/assets/ScreenShotEjs-displayed-notes.png)
 
-![public/assets/Screen-ShotEjs-terminalNoteID.png](public/assets/Screen-ShotEjs-terminalNoteID.png)
 ### Img Terminal showing note with title, text and Uniqu ID
+![public/assets/Screen-ShotEjs-terminalNoteID.png](public/assets/Screen-ShotEjs-terminalNoteID.png)
 
 ## Technoligies/Database
 
@@ -39,5 +39,5 @@ To accomplish this I used the `npm` to create a unique ID at [npmjs](https://www
 * See it Deployed at: `Heroku` [https://polar-wave-99684.herokuapp.com/](https://polar-wave-99684.herokuapp.com/)
 
 ## Conclusion
-At this point the app is not completley functionsing. I have a bit more reserch to do in ourder to Push the notes and save to db.json. 
+This is app is ready to go- only one extra part to add is to work in the delete function. 
 
