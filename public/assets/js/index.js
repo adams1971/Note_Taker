@@ -173,7 +173,7 @@ const renderNoteList = async (notes) => {
 
 const getAndRenderNotes = () => getNotes().then((results) => {
   console.log(results, 'these are my API results');
-  renderNoteList});
+  renderNoteList(results)});
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);

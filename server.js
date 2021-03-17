@@ -22,7 +22,7 @@ app.use(express.json()); //lets discuss use
 app.get("/api/notes", function(req, res) {
     // res.sendFile(path.join(__dirname, "/db/db.json"));
     console.log("mmmmm")
-    res.json(JSON.stringify(getNoteList()));
+    res.json(getNoteList()); //removed stringify
     //res.json();
 });
 
@@ -72,3 +72,5 @@ app.listen(PORT, () => {
     console.log(`App listening on PORT: ${PORT}`);
 });
 
+//for the delete hints
+//request.params 

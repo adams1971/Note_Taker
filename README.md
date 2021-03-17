@@ -1,5 +1,5 @@
 Express.js: Note Taker
-## Site Currently Under Construction
+
 ## Description
 This application will allow a user to create, edit and delete notes written in a database and stored on the server side. The app is then to be deployed on Heroku for user access.
 
@@ -15,11 +15,8 @@ The following images show the web application's appearance and functionality:
 ![public/assets/Screen-ShotEjs-localhost3000.png](public/assets/Screen-ShotEjs-localhost3000.png)
 ### Img Listening on Port 3000
 
-![public/assets/Screen-ShotEjs-HerokuDeploy.png](public/assets/Screen-ShotEjs-HerokuDeploy.png)
-### Img Notes.html page
-
-![public/assets/Screen-ShotEjs-Note.png](public/assets/Screen-ShotEjs-Note.png)
-### Img Notes.html page with new note HOWEVER this is not saving as JSON
+![public/assets/ScreenShotEjs-displayed-notes.png](public/assets/ScreenShotEjs-displayed-notes.png)
+### Img Notes.html page with saved notes
 
 ![public/assets/Screen-ShotEjs-terminalNoteID.png](public/assets/Screen-ShotEjs-terminalNoteID.png)
 ### Img Terminal showing note with title, text and Uniqu ID
